@@ -191,6 +191,15 @@ export default function AboutUs() {
     { img: project5, title: "Commercial Building", subtitle: "25kW Rooftop System", location: "Hubballi, Karnataka" },
     { img: project6, title: "Commercial Building", subtitle: "50kW Solar Array", location: "Hubballi, Karnataka" },
   ];
+
+    const partnerLogos = [
+    { src: enphaseLogo, alt: "Enphase" },
+    { src: adaniLogo, alt: "Adani Solar" },
+    { src: deyeLogo, alt: "Deye" },
+    { src: truepowerLogo, alt: "TruePower by JioThings" },
+    { src: pahalLogo, alt: "Pahal Solar" },
+    { src: panasonicLogo, alt: "Panasonic" },
+  ];
  
   return (
     <NewPageLayout>
@@ -336,22 +345,61 @@ export default function AboutUs() {
         </div>
       </section>
  
-      {/* ============ PARTNERS ============ */}
-      <section className="py-16 px-6 md:px-10 bg-stone-50 text-center">
-        <h2 style={heading} className="font-bold text-2xl mb-10">Our Partners</h2>
-        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-14 px-2">
-          {partners.map((p, i) => (
-            <Reveal key={p.name} delay={i * 60} className="shrink-0">
-              <div className="w-20 h-12 sm:w-24 sm:h-14 md:w-28 md:h-16 flex items-center justify-center">
-                <img
-                  src={p.logo}
-                  alt={p.name}
-                  className="max-h-full max-w-full object-contain transition hover:scale-105"
-                />
-              </div>
-            </Reveal>
-          ))}
+            {/* ============ OUR PARTNERS ============ */}
+      <section className="bg-white py-16">
+
+        <style>{`
+          @keyframes partners-marquee {
+            from {
+              transform: translateX(0);
+            }
+            to {
+              transform: translateX(-50%);
+            }
+          }
+        `}</style>
+
+        <div className="mx-auto max-w-8xl overflow-hidden px-6 lg:px-0">
+
+          <h2
+            style={heading}
+            className="mb-20 text-center text-[40px] font-bold leading-tight text-[#1A1C1A]"
+          >
+            Our Partners
+          </h2>
+
+          <div className="relative overflow-hidden">
+
+            <div
+              className="flex w-max items-center gap-28"
+              style={{
+                animation: "partners-marquee 18s linear infinite",
+              }}
+            >
+
+              {[...partnerLogos, ...partnerLogos].map(
+                (logo, index) => (
+                  <div
+                    key={`${logo.alt}-${index}`}
+                    className="flex h-20 w-36 shrink-0 items-center justify-center"
+                  >
+
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="max-h-30 w-full object-contain"
+                    />
+
+                  </div>
+                )
+              )}
+
+            </div>
+
+          </div>
+
         </div>
+
       </section>
  
       {/* ============ PROJECTS ============ */}
