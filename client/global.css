@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap");
+
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 352 61% 16%;
+    --card: 40 33% 97%;
+    --card-foreground: 352 61% 16%;
+    --popover: 40 33% 97%;
+    --popover-foreground: 352 61% 16%;
+    --primary: 352 61% 16%;
+    --primary-foreground: 40 33% 97%;
+    --secondary: 42 52% 81%;
+    --secondary-foreground: 352 61% 16%;
+    --muted: 38 30% 87%;
+    --muted-foreground: 352 20% 42%;
+    --accent: 37 87% 59%;
+    --accent-foreground: 352 61% 16%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 38 25% 82%;
+    --input: 38 25% 82%;
+    --ring: 37 87% 59%;
+    --radius: 1rem;
+    --sidebar-background: 40 33% 97%;
+    --sidebar-foreground: 352 61% 16%;
+    --sidebar-primary: 352 61% 16%;
+    --sidebar-primary-foreground: 40 33% 97%;
+    --sidebar-accent: 38 30% 87%;
+    --sidebar-accent-foreground: 352 61% 16%;
+    --sidebar-border: 38 25% 82%;
+    --sidebar-ring: 37 87% 59%;
+  }
+  html { scroll-behavior: smooth; }
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; font-family: "DM Sans", sans-serif; }
+  h1, h2, h3, h4, h5, h6 { font-family: "Manrope", sans-serif; }
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) { overflow-wrap: anywhere; word-break: break-word; }
+  pre, code { overflow-x: auto; white-space: pre; }
+}
